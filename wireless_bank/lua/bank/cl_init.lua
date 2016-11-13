@@ -29,29 +29,6 @@ surface.CreateFont( "Bank_smooth", {
 	weight = 700, 
 	antialias = true 
 } )
-/*
-local numbers = {
-	["1"] = true,
-	["2"] = true,
-	["3"] = true,
-	["4"] = true,
-	["5"] = true,
-	["6"] = true,
-	["7"] = true,
-	["8"] = true,
-	["9"] = true
-}
-
-local function escapeLetters(txt)
-	local text = ""
-	for i=1, #txt do
-		if numbers[txt[i]] then
-			text = text .. txt[i]
-		end
-	end
-	return tonumber(text)	
-end
-*/
 
 concommand.Add("bank", function()
 	
@@ -182,66 +159,3 @@ hook.Add( "OnPlayerChat", "HelloCommand", function( ply, strText, bTeam, bDead )
 		return true 
 	end
 end)
-
-/*
-local l, r, u, d =  9, 45, 300, 50
-local reverse = false
-local delay = CurTime()
-
-hook.Add("Think", "Derma_creator", function()	
-	-- moving
-	if input.IsKeyDown(KEY_SEMICOLON) and delay <= CurTime() then
-		delay = CurTime() + 0.3
-		reverse = !reverse
-		LocalPlayer():ChatPrint(tostring(reverse))
-	end
---	if input.WasKeyPressed(KEY_LEFT) then
-	if input.IsKeyDown(KEY_LEFT) and delay <= CurTime() then
-		delay = CurTime() + 0.3
-		if !reverse then
-			l = l + 1
-		else
-			l = l - 1
-		end
-		print(l, r, u, d)
-		B.Text:SetPos(wMod*l, hMod*r)
-	end
-	
---	if input.WasKeyPressed(KEY_RIGHT) then
-	if input.IsKeyDown(KEY_RIGHT) and delay <= CurTime() then
-		delay = CurTime() + 0.3
-		if !reverse then
-			r = r + 1
-		else
-			r = r - 1
-		end
-		print(l, r, u, d)
-		B.Text:SetPos(wMod*l, hMod*r)
-	end
-	
-	-- size
---	if input.WasKeyPressed(KEY_UP) then
-	if input.IsKeyDown(KEY_UP) and delay <= CurTime() then
-		delay = CurTime() + 0.3
-		if !reverse then
-			u = u + 1
-		else
-			u = u - 1
-		end
-		print(l, r, u, d)
-		B.Text:SetSize(wMod*u, hMod*d)
-	end
-	
---	if input.WasKeyPressed(KEY_DOWN) then
-	if input.IsKeyDown(KEY_DOWN) and delay <= CurTime() then
-		delay = CurTime() + 0.3
-		if !reverse then
-			d = d + 1
-		else
-			d = d - 1
-		end
-		print(l, r, u, d)
-		B.Text:SetSize(wMod*u, hMod*d)
-	end
-end)
-*/
